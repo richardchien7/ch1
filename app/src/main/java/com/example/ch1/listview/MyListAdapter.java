@@ -16,35 +16,37 @@ import org.w3c.dom.Text;
 public class MyListAdapter extends BaseAdapter {
     private Context mContext;
     private LayoutInflater mLayoutInflater;
-    MyListAdapter(Context context){
+
+    MyListAdapter(Context context) {
         this.mContext = context;
         this.mLayoutInflater = LayoutInflater.from(context);
     }
 
     @Override
-    public int getCount(){
+    public int getCount() {
         return 10;
     }
+
     @Override
-    public Object getItem(int position){
+    public Object getItem(int position) {
         return null;
     }
 
     @Override
-    public long getItemId(int position){
+    public long getItemId(int position) {
         return 0;
     }
 
-    static class ViewHolder{
+    static class ViewHolder {
         public ImageView imageView;
-        public TextView tvTitle,tvTime,tvContent;
+        public TextView tvTitle, tvTime, tvContent;
     }
 
 
     @Override
-    public View getView(int position, View convertView, ViewGroup parent){
+    public View getView(int position, View convertView, ViewGroup parent) {
         ViewHolder holder = null;
-        if(convertView == null){
+        if (convertView == null) {
             convertView = mLayoutInflater.inflate(R.layout.layout_list_item, null);
             holder = new ViewHolder();
             holder.imageView = (ImageView) convertView.findViewById(R.id.iv);
@@ -52,7 +54,7 @@ public class MyListAdapter extends BaseAdapter {
             holder.tvTime = (TextView) convertView.findViewById(R.id.tv_time);
             holder.tvContent = (TextView) convertView.findViewById(R.id.tv_content);
             convertView.setTag(holder);
-        }else{
+        } else {
             holder = (ViewHolder) convertView.getTag();
         }
         holder.tvTitle.setText("標題");
