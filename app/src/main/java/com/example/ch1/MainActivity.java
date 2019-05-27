@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
     private Button mBtnImageView;
     private Button mBtnListView;
     private Button mBtnGridView;
-
+    private Button mBtnTab;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,6 +37,7 @@ public class MainActivity extends AppCompatActivity {
         mBtnImageView = (Button)findViewById((R.id.btn_imageview));
         mBtnListView = (Button)findViewById(R.id.btn_listview);
         mBtnGridView = (Button)findViewById(R.id.btn_gridview);
+        mBtnTab = (Button)findViewById(R.id.btn_tab);
         setListeners();
     }
 
@@ -50,6 +51,7 @@ public class MainActivity extends AppCompatActivity {
         mBtnImageView.setOnClickListener(onclick);
         mBtnListView.setOnClickListener(onclick);
         mBtnGridView.setOnClickListener(onclick);
+        mBtnTab.setOnClickListener(onclick);
     }
 
     private class OnClick implements View.OnClickListener{
@@ -81,6 +83,8 @@ public class MainActivity extends AppCompatActivity {
                 case R.id.btn_gridview:
                     intent = new Intent(MainActivity.this, GridViewActivity.class);
                     break;
+                case R.id.btn_tab:
+                    intent = new Intent(MainActivity.this, TabActivity.class);
             }
             startActivity(intent);
         }

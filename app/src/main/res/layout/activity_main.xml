@@ -67,6 +67,12 @@
             android:layout_height="wrap_content"
             android:text="gridView"
             android:textAllCaps="false" />
+        <Button
+            android:id="@+id/btn_tab"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Tab"
+            android:textAllCaps="false" />
         <HorizontalScrollView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content">
