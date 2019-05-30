@@ -12,6 +12,7 @@ import android.widget.GridView;
 import android.widget.RadioButton;
 import android.widget.TextView;
 
+import com.example.ch1.fragment.ContainerActivity;
 import com.example.ch1.gridview.GridViewActivity;
 import com.example.ch1.listview.ListViewActivity;
 
@@ -25,6 +26,8 @@ public class MainActivity extends AppCompatActivity {
     private Button mBtnListView;
     private Button mBtnGridView;
     private Button mBtnTab;
+    private Button mBtnFragment;
+    private Button mBtnColumn;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,6 +41,8 @@ public class MainActivity extends AppCompatActivity {
         mBtnListView = (Button)findViewById(R.id.btn_listview);
         mBtnGridView = (Button)findViewById(R.id.btn_gridview);
         mBtnTab = (Button)findViewById(R.id.btn_tab);
+        mBtnFragment = (Button)findViewById(R.id.btn_fragment);
+        mBtnColumn = (Button) findViewById(R.id.btn_column);
         setListeners();
     }
 
@@ -52,6 +57,8 @@ public class MainActivity extends AppCompatActivity {
         mBtnListView.setOnClickListener(onclick);
         mBtnGridView.setOnClickListener(onclick);
         mBtnTab.setOnClickListener(onclick);
+        mBtnFragment.setOnClickListener(onclick);
+        mBtnColumn.setOnClickListener(onclick);
     }
 
     private class OnClick implements View.OnClickListener{
@@ -85,6 +92,12 @@ public class MainActivity extends AppCompatActivity {
                     break;
                 case R.id.btn_tab:
                     intent = new Intent(MainActivity.this, TabActivity.class);
+                    break;
+                case R.id.btn_fragment:
+                    intent = new Intent(MainActivity.this, ContainerActivity.class);
+                    break;
+                case R.id.btn_column:
+                    intent = new Intent(MainActivity.this, testActivity.class);
             }
             startActivity(intent);
         }
