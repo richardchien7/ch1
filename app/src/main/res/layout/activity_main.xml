@@ -65,7 +65,13 @@
             android:id="@+id/btn_gridview"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="gridView"
+            android:text="GridView"
+            android:textAllCaps="false" />
+        <Button
+            android:id="@+id/btn_recyclerview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="RecyclerView"
             android:textAllCaps="false" />
         <Button
             android:id="@+id/btn_tab"
@@ -80,11 +86,11 @@
             android:text="fragment"
             android:textAllCaps="false" />
         <Button
-            android:id="@+id/btn_column"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="column"
-            android:textAllCaps="false" />
+        android:id="@+id/btn_column"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="column"
+        android:textAllCaps="false" />
         <HorizontalScrollView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content">

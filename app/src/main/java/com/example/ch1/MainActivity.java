@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -15,6 +16,7 @@ import android.widget.TextView;
 import com.example.ch1.fragment.ContainerActivity;
 import com.example.ch1.gridview.GridViewActivity;
 import com.example.ch1.listview.ListViewActivity;
+import com.example.ch1.recyclerview.RecyclerViewActivity;
 
 public class MainActivity extends AppCompatActivity {
     private Button mBtnTextView;
@@ -28,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
     private Button mBtnTab;
     private Button mBtnFragment;
     private Button mBtnColumn;
+    private Button mRv;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,6 +46,7 @@ public class MainActivity extends AppCompatActivity {
         mBtnTab = (Button)findViewById(R.id.btn_tab);
         mBtnFragment = (Button)findViewById(R.id.btn_fragment);
         mBtnColumn = (Button) findViewById(R.id.btn_column);
+        mRv = (Button) findViewById(R.id.btn_recyclerview);
         setListeners();
     }
 
@@ -59,6 +63,7 @@ public class MainActivity extends AppCompatActivity {
         mBtnTab.setOnClickListener(onclick);
         mBtnFragment.setOnClickListener(onclick);
         mBtnColumn.setOnClickListener(onclick);
+        mRv.setOnClickListener(onclick);
     }
 
     private class OnClick implements View.OnClickListener{
@@ -98,6 +103,10 @@ public class MainActivity extends AppCompatActivity {
                     break;
                 case R.id.btn_column:
                     intent = new Intent(MainActivity.this, testActivity.class);
+                    break;
+                case R.id.btn_recyclerview:
+                    intent = new Intent(MainActivity.this, RecyclerViewActivity.class);
+                    break;
             }
             startActivity(intent);
         }

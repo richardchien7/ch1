@@ -11,19 +11,21 @@ import android.widget.Toast;
 
 import com.example.ch1.R;
 
-public class LinearRecyclerViewActivity extends AppCompatActivity {
-    private RecyclerView mRvMain;
+public class HorRecyclerViewActivity extends AppCompatActivity {
+    private RecyclerView mRvHor;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_linear_recycler_view);
-        mRvMain = (RecyclerView) findViewById(R.id.rv_main);
-        mRvMain.setLayoutManager(new LinearLayoutManager(LinearRecyclerViewActivity.this));
-        mRvMain.addItemDecoration(new MyDecoration());
-        mRvMain.setAdapter(new LinearAdapter(LinearRecyclerViewActivity.this, new LinearAdapter.OnItemClickListener() {
+        setContentView(R.layout.activity_hor_recycler_view);
+        mRvHor = (RecyclerView) findViewById(R.id.rv_hor);
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(HorRecyclerViewActivity.this);
+        linearLayoutManager.setOrientation(LinearLayoutManager.HORIZONTAL);
+        mRvHor.setLayoutManager(linearLayoutManager);
+        mRvHor.addItemDecoration(new MyDecoration());
+        mRvHor.setAdapter(new HorAdapter(HorRecyclerViewActivity.this, new HorAdapter.OnItemClickListener() {
             @Override
             public void onClick(int pos) {
-                Toast.makeText(LinearRecyclerViewActivity.this,"click " + pos, Toast.LENGTH_SHORT).show();
+                Toast.makeText(HorRecyclerViewActivity.this, "click:"+ pos,Toast.LENGTH_SHORT).show();
             }
         }));
     }
@@ -32,8 +34,7 @@ public class LinearRecyclerViewActivity extends AppCompatActivity {
         @Override
         public void getItemOffsets(@NonNull Rect outRect, @NonNull View view, @NonNull RecyclerView parent, @NonNull RecyclerView.State state) {
             super.getItemOffsets(outRect, view, parent, state);
-            outRect.set(0,0,0,getResources().getDimensionPixelOffset(R.dimen.dividerHeight));
+            outRect.set(0,0,getResources().getDimensionPixelOffset(R.dimen.dividerHeight),0);
         }
     }
-
 }

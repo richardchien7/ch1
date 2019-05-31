@@ -4,17 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context=".recyclerview.RecyclerViewActivity">
-    <Button
-        android:id="@+id/btn_linear"
+    tools:context=".recyclerview.HorRecyclerViewActivity">
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rv_hor"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="列表視窗"/>
+        android:background="@color/colorAccent">
 
-    <Button
-        android:id="@+id/btn_hor"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="水平滾動"/>
+    </android.support.v7.widget.RecyclerView>
+
 </LinearLayout>
