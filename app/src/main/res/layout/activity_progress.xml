@@ -43,5 +43,11 @@
         android:progress="30"
         android:secondaryProgress="50"
         />
+    <Button
+        android:id="@+id/btn_start"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="模擬進度"
+        android:layout_marginTop="20dp"/>
 
 </LinearLayout>
